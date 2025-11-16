@@ -1,0 +1,52 @@
+{
+  "heading": "Shop All",
+  "subCategory": {
+    "Categories": [
+      {
+        "name": "T-Shirts",
+        "img": "/cat-1.png",
+        "path": "/t-shirts"
+      },
+      {
+        "name": "Winterwear",
+        "img": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQS6Fju3s3OtwYUzjcKT69xGsFFe8qTs-GAcT6guyMsHW1OSwgx7PqlpMen6MMceb_7S0bRrskkaRbWmt9MVZsd4YRMPaVVWvIQM9vt-TbqxZNqTFOYU-bUsg",
+        "path": "/winterwear"
+      },
+      {
+        "name": "Polos",
+        "img": "/cat-3.png",
+        "path": "/polos"
+      },
+      {
+        "name": "Shirts",
+        "img": "/cat-4.png",
+        "path": "/shirts"
+      },
+      {
+        "name": "Cotton Linen",
+        "img": "/cat-5.png",
+        "path": "/cotton-linen"
+      },
+      {
+        "name": "Supima™",
+        "img": "/cat-6.png",
+        "path": "/supima"
+      },
+      {
+        "name": "Jeans",
+        "img": "/cat-7.png",
+        "path": "/jeans"
+      },
+      {
+        "name": "Pants",
+        "img": "/cat-8.png",
+        "path": "/pants"
+      },
+      {
+        "name": "Joggers",
+        "img": "/cat-9.png",
+        "path": "/joggers"
+      }
+    ]
+  }
+}
