@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": "cat_men_01",
+      "collectionId": "col_1a2b3c",
+      "slug": "mens",
+      "name": "Mens",
+      "description": "Men's festival wear",
+      "image": "https://cdn.lyfclothing.dev/images/collections/festive/mens.jpg"
+    },
+    {
+      "id": "cat_women_01",
+      "collectionId": "col_1a2b3c",
+      "slug": "womens",
+      "name": "Women",
+      "description": "Women's festival wear",
+      "image": "https://cdn.lyfclothing.dev/images/collections/festive/womens.jpg"
+    },
+    {
+      "id": "cat_kids_01",
+      "collectionId": "col_1a2b3c",
+      "slug": "kids",
+      "name": "Kids",
+      "description": "Kids festival outfits",
+      "image": "https://cdn.lyfclothing.dev/images/collections/festive/kids.jpg"
+    }
+  ]
+}
