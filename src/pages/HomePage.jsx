@@ -1,6 +1,4 @@
 import HeroCarousel from '../components/home/HeroCarousel';
-import CategoryCarousel from '../components/navbar/CategoryCarousel';
-import ShopAllGrid from '../components/navbar/ShopAllGrid';
 
 const HomePage = () => {
   return (
