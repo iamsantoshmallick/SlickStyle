@@ -9,11 +9,11 @@ import 'swiper/css/navigation';
 
 const slides = [
   {
-    image: 'src/assets/Images/HomePage-Carousel-3.avif', // Note the starting '/'
+    image: 'src/assets/Images/HomePage-Carousel-3.avif',
     alt: 'Never Just T-Shirt',
   },
   {
-    image: 'src/assets/Images/HomePage-Carousel-2.jpg', // Note the starting '/'
+    image: 'src/assets/Images/HomePage-Carousel-2.jpg',
     alt: 'Everyday Denims',
   },
 ];
