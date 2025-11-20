@@ -26,7 +26,7 @@ const TopSection = ({ activeCategory, onCategoryChange }) => {
       </div>
 
       {/* Green Banner */}
-      <div className="flex items-center justify-between bg-[#1d8c84] px-4 py-2 text-white">
+      <div className="flex items-center justify-between bg-[#1d8c84] px-4 py-2 mx-0.5 text-white">
         <span className="text-xs font-semibold">
           Earn 10% Cashback on Every App Order
         </span>

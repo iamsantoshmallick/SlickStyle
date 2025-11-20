@@ -1,22 +1,39 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router";
 import { Menu, Search, Heart, ShoppingBag, User, Mic, X } from "lucide-react";
-import CategoryCarousel from "../navbar/CategoryCarousel";
 const logoText = "/logo.png";
 const logoGhost = "/logo-black.png";
-import AccordionGrid from "../navbar/AccordionGrid";
-import AccordionData from "../../Data/products.json";
 import TopSection from "../navbar/TopSection";
+import CategoryCarousel from "../navbar/CategoryCarousel";
+import AccordionData from "../../data/products.json";
+import AccordionGrid from "../navbar/AccordionGrid";
+import carouselData from "../../data/nav-carousel.json"
+import { setGender } from "../../features/shop/shopSlice";
 
 const Header = () => {
+    const navLinks = [
+    { name: "MEN", path: "/men" },
+    { name: "WOMEN", path: "/women" },
+  ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [sidebarCategory, setSidebarCategory] = useState("men");
+  const sidebarRef = useRef(null);
 
   const cartItemCount = useSelector((state) =>
     state.cart.items.reduce((total, item) => total + item.quantity, 0)
   );
 
+  // access the global gender state
+  const activeGender = useSelector((state) => state.shop.gender);
+  const dispatch = useDispatch();
+  
+
+  // Handler to dispatch the change
+  const handleCategoryChange = (category) => {
+    dispatch(setGender(category));
+  };
+
+  // Effect to manage body overflow
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add("overflow-hidden");
@@ -29,10 +46,27 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  const navLinks = [
-    { name: "MEN", path: "/men" },
-    { name: "WOMEN", path: "/women" },
-  ];
+  // Effect to handle outside clicks
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the menu is open AND if the click occurred outside the referenced sidebar.
+      // The 'contains' check returns false if the click target is the sidebar itself or a descendant.
+      if (
+        isMenuOpen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+    // Attach the event listener to the entire document when the component mounts
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup: Remove the event listener when the component unmounts or menu closes
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -122,7 +156,7 @@ const Header = () => {
           </button>
         </div>
       </nav>
-  {/* 3. SUB-NAV (Mobile Only) */}
+      {/* 3. SUB-NAV (Mobile Only) */}
       <div className="flex justify-around border-b border-gray-200 bg-white px-4 md:hidden">
         {navLinks.map((link) => (
           <NavLink
@@ -141,27 +175,30 @@ const Header = () => {
         ))}
       </div>
 
-      {/* 4. MOBILE MENU OVERLAY SIDEBAR*/}
+      {/* 4.OVERLAY SIDEBAR*/}
       {isMenuOpen && (
         /* Background Fixed */
         <div className="fixed left-0 top-0 h-screen w-full bg-black/50 z-50">
-          <div className="h-full w-5/6 max-w-3/7 bg-white overflow-y-auto custom-scrollbar">
-            <div className="flex">
+          <div
+            ref={sidebarRef}
+            className="h-full w-5/6 md:max-w-4/9 bg-white overflow-y-auto custom-scrollbar"
+          >
+            <div className="flex justify-end">
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="flex-end z-10 text-gray-500 md:hidden"
+                className="z-10 text-gray-500 md:hidden"
               >
                 <X size={24} />
               </button>
             </div>
             <TopSection
-              activeCategory={sidebarCategory}
-              onCategoryChange={setSidebarCategory}
+              activeCategory={activeGender} // Pass Redux state
+              onCategoryChange={handleCategoryChange} // Pass dispatch handler
             />
-            <CategoryCarousel />
+            <CategoryCarousel data={carouselData[activeGender]} />
             <AccordionGrid
-              key={sidebarCategory}
-              data={AccordionData[sidebarCategory]}
+              key={activeGender} // Force re-render when gender changes
+              data={AccordionData[activeGender]} // Pull data based on Redux state
             />
           </div>
         </div>

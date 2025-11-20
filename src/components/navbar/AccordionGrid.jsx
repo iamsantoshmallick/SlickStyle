@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import ImageWithFallback from './ImageWithFallback';
+
 
 // --- Sub-Accordion Component (Handles the subsections like 'Shop By Fit') ---
 const SubAccordionItem = ({ subSection }) => {
@@ -21,16 +23,7 @@ const SubAccordionItem = ({ subSection }) => {
         >
         <div className='flex flex-wrap items-center justify-center text-center'>
           <div className=" mb-2 h-24 w-24 overflow-hidden rounded-md bg-gray-100">
-            <img
-              src={item.img}
-              alt={item.name}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-              onError={(e) => {
-                 e.target.style.display='none'; 
-                 e.target.parentNode.classList.add('bg-gray-200', 'flex', 'items-center', 'justify-center');
-                 e.target.parentNode.innerHTML = '<span class="text-xs text-gray-400">No Img</span>';
-              }}
-            />
+            <ImageWithFallback src={item.img} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"/>
           </div>
           </div>
           <p className="flex-1 flex justify-center text-xs font-medium text-gray-800 group-hover:text-red-600 px-1">
@@ -87,7 +80,7 @@ const AccordionGrid = ({ data }) => {
   const sections = Object.values(data);
 
   return (
-    <div className="flex flex-col gap-2 pb-20"> {/* pb-20 adds space for scrolling at bottom */}
+    <div className="flex flex-col gap-2 pb-20 px-5">
       {sections.map((section, index) => (
         <AccordionItem key={index} section={section} />
       ))}
