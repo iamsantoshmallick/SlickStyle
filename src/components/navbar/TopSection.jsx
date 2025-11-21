@@ -1,9 +1,10 @@
-const TopSection = ({ activeCategory, onCategoryChange }) => {
+import { NavLink } from "react-router";
+
+const TopSection = () => {
   
-  // Helper for consistent tab styling based on props
-  const getLinkClass = (category) => {
-    const isActive = activeCategory === category;
-    
+  // Helper for consistent tab styling
+  // We now pass the boolean 'isActive' directly from NavLink
+  const getLinkClass = (isActive) => {
     const baseClass = "flex-1 py-3.5 text-center text-sm font-bold tracking-wider border-b-4 transition-colors cursor-pointer";
     const activeClass = "border-[#1d8c84] text-[#1d8c84]";
     const inactiveClass = "border-transparent text-gray-500 hover:text-gray-700";
@@ -45,21 +46,21 @@ const TopSection = ({ activeCategory, onCategoryChange }) => {
         </div>
       </div>
 
-      {/* Tab Switchers (Buttons instead of Links) */}
+      {/* Tab Switchers (NavLinks) */}
       <div className="flex w-full border-b border-gray-200 bg-white shadow-[0_2px_4px_rgba(0,0,0,0.05)]">
-        <button 
-          onClick={() => onCategoryChange('men')} 
-          className={getLinkClass('men')}
+        <NavLink 
+          to="/men" 
+          className={({ isActive }) => getLinkClass(isActive)}
         >
           MEN
-        </button>
+        </NavLink>
         
-        <button 
-          onClick={() => onCategoryChange('women')} 
-          className={getLinkClass('women')}
+        <NavLink 
+          to="/women" 
+          className={({ isActive }) => getLinkClass(isActive)}
         >
           WOMEN
-        </button>
+        </NavLink>
       </div>
     </div>
   );

@@ -195,11 +195,15 @@ const Header = () => {
               activeCategory={activeGender} // Pass Redux state
               onCategoryChange={handleCategoryChange} // Pass dispatch handler
             />
+            {(activeGender) && (
+            <>
             <CategoryCarousel data={carouselData[activeGender]} />
             <AccordionGrid
               key={activeGender} // Force re-render when gender changes
               data={AccordionData[activeGender]} // Pull data based on Redux state
             />
+            </>
+            )}
           </div>
         </div>
       )}

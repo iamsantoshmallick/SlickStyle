@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  gender: 'men', // Default value
+  gender: '', // Default value
 };
 
 const shopSlice = createSlice({
