@@ -1,0 +1,34 @@
+{
+  "men": {
+    "topNav": [
+      { "name": "New In", "img": "/icons/new-in.jpg", "path": "/men/new" },
+      { "name": "Polos", "img": "/icons/polo.jpg", "path": "/men/polos" },
+      { "name": "T-Shirts", "img": "/icons/tshirt.jpg", "path": "/men/t-shirts" },
+      { "name": "Shirts", "img": "/icons/shirt.jpg", "path": "/men/shirts" },
+      { "name": "Jeans", "img": "/icons/jeans.jpg", "path": "/men/jeans" },
+      { "name": "Winterwear", "img": "/icons/winter.jpg", "path": "/men/winterwear" },
+      { "name": "Innerwear", "img": "/icons/inner.jpg", "path": "/men/innerwear" },
+      { "name": "Footwear", "img": "/icons/shoes.jpg", "path": "/men/footwear" }
+    ],
+    "heroSlides": [
+      { "image": "src/assets/Images/HomePage-Carousel-3.avif", "alt": "Men Winter Fest" },
+      { "image": "src/assets/Images/HomePage-Carousel-2.jpg", "alt": "Urban Style" }
+    ]
+  },
+  "women": {
+    "topNav": [
+      { "name": "New In", "img": "/icons/w-new.jpg", "path": "/women/new" },
+      { "name": "Dresses", "img": "/icons/w-dress.jpg", "path": "/women/dresses" },
+      { "name": "Tops", "img": "/icons/w-top.jpg", "path": "/women/tops" },
+      { "name": "Kurtas", "img": "/icons/w-kurta.jpg", "path": "/women/kurtas" },
+      { "name": "Jeans", "img": "/icons/w-jeans.jpg", "path": "/women/jeans" },
+      { "name": "Beauty", "img": "/icons/beauty.jpg", "path": "/women/beauty" },
+      { "name": "Bags", "img": "/icons/bag.jpg", "path": "/women/bags" },
+      { "name": "Watches", "img": "/icons/watch.jpg", "path": "/women/watches" }
+    ],
+    "heroSlides": [
+      { "image": "/hero/women-hero-1.jpg", "alt": "Women Festive Sale" },
+      { "image": "/hero/women-hero-2.jpg", "alt": "Classic Collection" }
+    ]
+  }
+}
