@@ -11,8 +11,56 @@
       { "name": "Footwear", "img": "/icons/shoes.jpg", "path": "/men/footwear" }
     ],
     "heroSlides": [
-      { "image": "src/assets/Images/HomePage-Carousel-3.avif", "alt": "Men Winter Fest" },
-      { "image": "src/assets/Images/HomePage-Carousel-2.jpg", "alt": "Urban Style" }
+      { "image": "/hero/men-hero-1.jpg", "alt": "Men Winter Fest" },
+      { "image": "/hero/men-hero-2.jpg", "alt": "Urban Style" }
+    ],
+    "sections": [
+      {
+        "id": "m-sec-1",
+        "type": "carousel",
+        "title": "November Deals",
+        "aspectRatio": "aspect-1/1",
+        "items": [
+          { "id": 1, "img": "/products/polo-1.jpg", "brand": "U.S. Polo Assn.", "discount": "Flat 40%", "path": "/product/1" },
+          { "id": 2, "img": "/products/benetton-1.jpg", "brand": "United Colors", "discount": "Buy 2 at 30%", "path": "/product/2" },
+          { "id": 3, "img": "/products/pepe-1.jpg", "brand": "Pepe Jeans", "discount": "Min. 30%", "path": "/product/3" },
+          { "id": 4, "img": "/products/fah-1.jpg", "brand": "Fahrenheit", "discount": "Flat 30%", "path": "/product/4" },
+          { "id": 5, "img": "/products/celio-1.jpg", "brand": "Celio", "discount": "Buy 2 at 40%", "path": "/product/5" },
+          { "id": 6, "img": "/products/spykar-1.jpg", "brand": "Spykar", "discount": "Up to 40%", "path": "/product/6" },
+          { "id": 101, "img": "/products/polo-1.jpg", "brand": "U.S. Polo Assn.", "discount": "Flat 40%", "path": "/product/101" },
+          { "id": 102, "img": "/products/benetton-1.jpg", "brand": "United Colors", "discount": "Buy 2 at 30%", "path": "/product/102" },
+          { "id": 103, "img": "/products/pepe-1.jpg", "brand": "Pepe Jeans", "discount": "Min. 30%", "path": "/product/103" },
+          { "id": 104, "img": "/products/fah-1.jpg", "brand": "Fahrenheit", "discount": "Flat 30%", "path": "/product/104" },
+          { "id": 105, "img": "/products/celio-1.jpg", "brand": "Celio", "discount": "Buy 2 at 40%", "path": "/product/105" },
+          { "id": 106, "img": "/products/spykar-1.jpg", "brand": "Spykar", "discount": "Up to 40%", "path": "/product/106" }
+        ]
+      },
+      {
+        "id": "m-sec-2",
+        "type": "carousel",
+        "title": "First Time on Discount",
+        "aspectRatio": "aspect-4/5",
+        "items": [
+          { "id": 7, "img": "/products/kappa-1.jpg", "brand": "Kappa", "discount": "Flat 15%", "path": "/product/7" },
+          { "id": 8, "img": "/products/fame-1.jpg", "brand": "Fame Forever", "discount": "Flat 15%", "path": "/product/8" },
+          { "id": 9, "img": "/products/bossini-1.jpg", "brand": "Bossini", "discount": "Flat 15%", "path": "/product/9" },
+          { "id": 10, "img": "/products/code-1.jpg", "brand": "Code", "discount": "Flat 15%", "path": "/product/10" },
+          { "id": 11, "img": "/products/forca-1.jpg", "brand": "Forca", "discount": "Flat 15%", "path": "/product/11" },
+          { "id": 12, "img": "/products/smiley-1.jpg", "brand": "Smiley", "discount": "Flat 15%", "path": "/product/12" }
+        ]
+      },
+      {
+        "id": "m-sec-3",
+        "type": "carousel",
+        "title": "Trending Now",
+        "aspectRatio": "aspect-4/5",
+        "items": [
+          { "id": 13, "img": "/products/jack-1.jpg", "brand": "Jack & Jones", "discount": "New Arrival", "path": "/product/13" },
+          { "id": 14, "img": "/products/levis-1.jpg", "brand": "Levi's", "discount": "Best Seller", "path": "/product/14" },
+          { "id": 15, "img": "/products/puma-1.jpg", "brand": "Puma", "discount": "Trending", "path": "/product/15" },
+          { "id": 16, "img": "/products/adidas-1.jpg", "brand": "Adidas", "discount": "Hot", "path": "/product/16" }
+        ]
+      }
     ]
   },
   "women": {
@@ -29,6 +77,22 @@
     "heroSlides": [
       { "image": "/hero/women-hero-1.jpg", "alt": "Women Festive Sale" },
       { "image": "/hero/women-hero-2.jpg", "alt": "Classic Collection" }
+    ],
+    "sections": [
+      {
+        "id": "w-sec-1",
+        "type": "carousel",
+        "title": "November Deals",
+        "aspectRatio": "aspect-4/5",
+        "items": [
+          { "id": 101, "img": "/products/w-dress-1.jpg", "brand": "Global Desi", "discount": "Flat 40%", "path": "/product/101" },
+          { "id": 102, "img": "/products/w-top-1.jpg", "brand": "Forever New", "discount": "Buy 2 at 30%", "path": "/product/102" },
+          { "id": 103, "img": "/products/w-jeans-1.jpg", "brand": "Levi's", "discount": "Min. 30%", "path": "/product/103" },
+          { "id": 104, "img": "/products/w-bag-1.jpg", "brand": "Caprese", "discount": "Flat 30%", "path": "/product/104" },
+          { "id": 105, "img": "/products/w-watch-1.jpg", "brand": "Fossil", "discount": "Up to 50%", "path": "/product/105" },
+          { "id": 106, "img": "/products/w-shoe-1.jpg", "brand": "Catwalk", "discount": "Flat 20%", "path": "/product/106" }
+        ]
+      }
     ]
   }
 }
