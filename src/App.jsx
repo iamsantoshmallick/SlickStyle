@@ -2,7 +2,7 @@ import "./App.css";
 import { createBrowserRouter,RouterProvider } from "react-router";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/layout/Layout";
-import DynamicHome from "./pages/DynamicPages";
+import DynamicHome from "./pages/DynamicHome";
 
 const router = createBrowserRouter([
   {

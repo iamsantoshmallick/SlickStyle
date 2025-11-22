@@ -118,7 +118,7 @@ const TopIconNav = ({ data }) => {
       }}
     >
       <div
-        className="container mx-auto px-4"
+        className="container mx-auto ps-2 md:px-4"
         style={{
           paddingTop: "calc(1rem - (var(--scroll-progress) * 0.5rem))",
           paddingBottom: "calc(1rem - (var(--scroll-progress) * 0.5rem))",

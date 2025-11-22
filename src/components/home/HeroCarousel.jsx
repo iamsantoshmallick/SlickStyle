@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
@@ -13,14 +14,14 @@ const HeroCarousel = ({ slides }) => {
   if (!slides || slides.length === 0) return null;
 
   return (
-    <section className="w-full">
+    <section className="w-full group relative">
       <Swiper
         modules={[Pagination, Autoplay, Navigation]}
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop={true}
-        navigation={true}
-        className="w-full"
+        navigation={true} 
+        className="w-full hero-swiper"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -32,7 +33,7 @@ const HeroCarousel = ({ slides }) => {
                <img 
                  src={slide.image} 
                  alt={slide.alt} 
-                 className="h-[400px] w-full object-cover md:h-[500px] lg:h-[600px]" 
+                 className="w-full object-cover object-top aspect-21/9 md:aspect-21/7" 
                />
             </div>
           </SwiperSlide>
