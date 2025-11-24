@@ -1,0 +1,411 @@
+[
+  {
+    "id": "prod-124",
+    "brand": "THE SLICK STYLE",
+    "title": "Oversized Spiderman Web-Slinger Tee",
+    "price": 899,
+    "mrp": 1599,
+    "discount": "44% OFF",
+    "rating": 4.6,
+    "reviewCount": 184,
+    "breadcrumbs": ["Home", "Men", "Topwear", "T-Shirts"],
+    "images": [
+      "/product-images/spiderman-1.jpg",
+      "/product-images/spiderman-2.jpg",
+      "/product-images/spiderman-3.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": true },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": false },
+      { "size": "XXL", "stock": true }
+    ],
+    "description": "Celebrate your inner superhero with this official Marvel Spiderman tee crafted from premium cotton for everyday comfort.",
+    "productDetails": [
+      { "label": "Material", "value": "100% Cotton" },
+      { "label": "Fit", "value": "Oversized Fit" },
+      { "label": "Sleeve", "value": "Half Sleeve" },
+      { "label": "Wash Care", "value": "Cold Machine Wash" }
+    ]
+  },
+  {
+    "id": "prod-125",
+    "brand": "THE SLICK STYLE",
+    "title": "Minimalist White Essential Tee",
+    "price": 599,
+    "mrp": 999,
+    "discount": "40% OFF",
+    "rating": 4.3,
+    "reviewCount": 76,
+    "breadcrumbs": ["Home", "Men", "Topwear", "T-Shirts"],
+    "images": [
+      "/product-images/white-essential-1.jpg",
+      "/product-images/white-essential-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": true },
+      { "size": "M", "stock": false },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true },
+      { "size": "XXL", "stock": true }
+    ],
+    "description": "A clean, everyday white tee that pairs well with anything. Soft, breathable fabric designed for daily wear.",
+    "productDetails": [
+      { "label": "Material", "value": "Soft Cotton Blend" },
+      { "label": "Fit", "value": "Regular Fit" },
+      { "label": "Sleeve", "value": "Half Sleeve" },
+      { "label": "Wash Care", "value": "Machine Wash" }
+    ]
+  },
+  {
+    "id": "prod-126",
+    "brand": "THE SLICK STYLE",
+    "title": "Black Premium Oversized Hoodie",
+    "price": 1499,
+    "mrp": 2499,
+    "discount": "40% OFF",
+    "rating": 4.7,
+    "reviewCount": 220,
+    "breadcrumbs": ["Home", "Men", "Winterwear", "Hoodies"],
+    "images": [
+      "/product-images/black-hoodie-1.jpg",
+      "/product-images/black-hoodie-2.jpg",
+      "/product-images/black-hoodie-3.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": false },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true },
+      { "size": "XXL", "stock": false }
+    ],
+    "description": "Stay warm and stylish with this heavyweight oversized hoodie made from ultra-soft fleece.",
+    "productDetails": [
+      { "label": "Material", "value": "Fleece Cotton" },
+      { "label": "Fit", "value": "Oversized Fit" },
+      { "label": "Sleeve", "value": "Full Sleeve" },
+      { "label": "Wash Care", "value": "Hand Wash Preferred" }
+    ]
+  },
+  {
+    "id": "prod-127",
+    "brand": "THE SLICK STYLE",
+    "title": "Monsoon Shield Waterproof Jacket",
+    "price": 1799,
+    "mrp": 2999,
+    "discount": "40% OFF",
+    "rating": 4.4,
+    "reviewCount": 98,
+    "breadcrumbs": ["Home", "Men", "Outerwear", "Jackets"],
+    "images": [
+      "/product-images/waterproof-jacket-1.jpg",
+      "/product-images/waterproof-jacket-2.jpg"
+    ],
+    "sizes": [
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": false }
+    ],
+    "description": "A lightweight waterproof jacket built to handle heavy rains while keeping breathability intact.",
+    "productDetails": [
+      { "label": "Material", "value": "Polyester Shell" },
+      { "label": "Feature", "value": "Waterproof & Windproof" },
+      { "label": "Fit", "value": "Regular Fit" },
+      { "label": "Wash Care", "value": "Wipe Clean" }
+    ]
+  },
+  {
+    "id": "prod-128",
+    "brand": "THE SLICK STYLE",
+    "title": "Graphic Anime Samurai Tee",
+    "price": 799,
+    "mrp": 1399,
+    "discount": "42% OFF",
+    "rating": 4.8,
+    "reviewCount": 310,
+    "breadcrumbs": ["Home", "Men", "Topwear", "T-Shirts"],
+    "images": [
+      "/product-images/samurai-1.jpg",
+      "/product-images/samurai-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": true },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": false },
+      { "size": "XXL", "stock": true }
+    ],
+    "description": "Bold anime-inspired samurai artwork printed on premium breathable cotton.",
+    "productDetails": [
+      { "label": "Material", "value": "100% Cotton" },
+      { "label": "Fit", "value": "Relaxed Fit" },
+      { "label": "Printing", "value": "High-Density Print" }
+    ]
+  },
+  {
+    "id": "prod-129",
+    "brand": "THE SLICK STYLE",
+    "title": "Classic Blue Denim Jacket",
+    "price": 1699,
+    "mrp": 2799,
+    "discount": "39% OFF",
+    "rating": 4.5,
+    "reviewCount": 147,
+    "breadcrumbs": ["Home", "Men", "Outerwear", "Jackets"],
+    "images": [
+      "/product-images/denim-jacket-1.jpg",
+      "/product-images/denim-jacket-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": false },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "A timeless denim jacket built with durable fabric and a structured fit.",
+    "productDetails": [
+      { "label": "Material", "value": "100% Denim" },
+      { "label": "Fit", "value": "Regular Fit" },
+      { "label": "Wash Care", "value": "Cold Wash" }
+    ]
+  },
+  {
+    "id": "prod-130",
+    "brand": "THE SLICK STYLE",
+    "title": "Beige Cargo Joggers",
+    "price": 999,
+    "mrp": 1699,
+    "discount": "41% OFF",
+    "rating": 4.4,
+    "reviewCount": 212,
+    "breadcrumbs": ["Home", "Men", "Bottomwear", "Joggers"],
+    "images": [
+      "/product-images/cargo-joggers-1.jpg",
+      "/product-images/cargo-joggers-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": true },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": false },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "Comfortable cargo joggers designed with multiple pockets and tapered legs.",
+    "productDetails": [
+      { "label": "Material", "value": "Cotton Blend" },
+      { "label": "Fit", "value": "Tapered Fit" },
+      { "label": "Feature", "value": "Utility Pockets" }
+    ]
+  },
+  {
+    "id": "prod-131",
+    "brand": "THE SLICK STYLE",
+    "title": "Vintage Washed Black Tee",
+    "price": 749,
+    "mrp": 1299,
+    "discount": "42% OFF",
+    "rating": 4.6,
+    "reviewCount": 141,
+    "breadcrumbs": ["Home", "Men", "Topwear", "T-Shirts"],
+    "images": [
+      "/product-images/vintage-black-1.jpg",
+      "/product-images/vintage-black-2.jpg"
+    ],
+    "sizes": [
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true },
+      { "size": "XXL", "stock": false }
+    ],
+    "description": "A pre-washed black tee with a retro vibe and soft-touch finish.",
+    "productDetails": [
+      { "label": "Material", "value": "Washed Cotton" },
+      { "label": "Fit", "value": "Casual Fit" },
+      { "label": "Wash Care", "value": "Machine Wash" }
+    ]
+  },
+  {
+    "id": "prod-132",
+    "brand": "THE SLICK STYLE",
+    "title": "Olive Varsity Bomber Jacket",
+    "price": 1999,
+    "mrp": 3499,
+    "discount": "42% OFF",
+    "rating": 4.7,
+    "reviewCount": 162,
+    "breadcrumbs": ["Home", "Men", "Outerwear", "Jackets"],
+    "images": [
+      "/product-images/olive-bomber-1.jpg",
+      "/product-images/olive-bomber-2.jpg"
+    ],
+    "sizes": [
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": false },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "A stylish bomber jacket with ribbed cuffs and premium zippers.",
+    "productDetails": [
+      { "label": "Material", "value": "Nylon Shell + Soft Lining" },
+      { "label": "Fit", "value": "Bomber Fit" },
+      { "label": "Feature", "value": "Ribbed Hem & Cuffs" }
+    ]
+  },
+  {
+    "id": "prod-133",
+    "brand": "THE SLICK STYLE",
+    "title": "Essential Black Track Pants",
+    "price": 899,
+    "mrp": 1499,
+    "discount": "40% OFF",
+    "rating": 4.2,
+    "reviewCount": 88,
+    "breadcrumbs": ["Home", "Men", "Bottomwear", "Track Pants"],
+    "images": [
+      "/product-images/trackpants-black-1.jpg",
+      "/product-images/trackpants-black-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": false },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "Comfort-fit track pants suitable for workouts and lounging.",
+    "productDetails": [
+      { "label": "Material", "value": "Poly-Cotton" },
+      { "label": "Fit", "value": "Regular Fit" },
+      { "label": "Feature", "value": "Elastic Waistband" }
+    ]
+  },
+  {
+    "id": "prod-134",
+    "brand": "THE SLICK STYLE",
+    "title": "Grey Winter Fleece Sweatshirt",
+    "price": 1199,
+    "mrp": 1999,
+    "discount": "40% OFF",
+    "rating": 4.5,
+    "reviewCount": 175,
+    "breadcrumbs": ["Home", "Men", "Winterwear", "Sweatshirts"],
+    "images": [
+      "/product-images/grey-sweatshirt-1.jpg",
+      "/product-images/grey-sweatshirt-2.jpg"
+    ],
+    "sizes": [
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": false },
+      { "size": "XXL", "stock": true }
+    ],
+    "description": "A warm fleece-lined sweatshirt perfect for chilly evenings.",
+    "productDetails": [
+      { "label": "Material", "value": "Fleece Cotton" },
+      { "label": "Fit", "value": "Regular Fit" },
+      { "label": "Wash Care", "value": "Machine Wash" }
+    ]
+  },
+  {
+    "id": "prod-135",
+    "brand": "THE SLICK STYLE",
+    "title": "Dark Green Polo Collar Tee",
+    "price": 799,
+    "mrp": 1299,
+    "discount": "38% OFF",
+    "rating": 4.1,
+    "reviewCount": 101,
+    "breadcrumbs": ["Home", "Men", "Topwear", "Polo T-Shirts"],
+    "images": [
+      "/product-images/green-polo-1.jpg",
+      "/product-images/green-polo-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": true },
+      { "size": "M", "stock": false },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "A smart casual polo tee made with breathable cotton.",
+    "productDetails": [
+      { "label": "Material", "value": "Cotton Piqué" },
+      { "label": "Fit", "value": "Regular Fit" },
+      { "label": "Sleeve", "value": "Half Sleeve" }
+    ]
+  },
+  {
+    "id": "prod-136",
+    "brand": "THE SLICK STYLE",
+    "title": "Oversized Purple Streetwear Tee",
+    "price": 899,
+    "mrp": 1499,
+    "discount": "40% OFF",
+    "rating": 4.4,
+    "reviewCount": 190,
+    "breadcrumbs": ["Home", "Men", "Topwear", "T-Shirts"],
+    "images": [
+      "/product-images/purple-oversized-1.jpg",
+      "/product-images/purple-oversized-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": false },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "A trendy oversized tee in a bold purple shade for a clean streetwear look.",
+    "productDetails": [
+      { "label": "Material", "value": "Cotton Blend" },
+      { "label": "Fit", "value": "Oversized Fit" }
+    ]
+  },
+  {
+    "id": "prod-137",
+    "brand": "THE SLICK STYLE",
+    "title": "Grey Gym Performance Tee",
+    "price": 699,
+    "mrp": 1199,
+    "discount": "41% OFF",
+    "rating": 4.3,
+    "reviewCount": 84,
+    "breadcrumbs": ["Home", "Men", "Sportswear", "T-Shirts"],
+    "images": [
+      "/product-images/gym-grey-1.jpg",
+      "/product-images/gym-grey-2.jpg"
+    ],
+    "sizes": [
+      { "size": "S", "stock": true },
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": true },
+      { "size": "XL", "stock": false }
+    ],
+    "description": "A breathable performance tee designed for workouts and high-intensity training.",
+    "productDetails": [
+      { "label": "Material", "value": "Polyester Dry-Fit" },
+      { "label": "Fit", "value": "Athletic Fit" }
+    ]
+  },
+  {
+    "id": "prod-138",
+    "brand": "THE SLICK STYLE",
+    "title": "Brown Corduroy Shirt",
+    "price": 1299,
+    "mrp": 2199,
+    "discount": "41% OFF",
+    "rating": 4.6,
+    "reviewCount": 112,
+    "breadcrumbs": ["Home", "Men", "Topwear", "Shirts"],
+    "images": [
+      "/product-images/corduroy-brown-1.jpg",
+      "/product-images/corduroy-brown-2.jpg"
+    ],
+    "sizes": [
+      { "size": "M", "stock": true },
+      { "size": "L", "stock": false },
+      { "size": "XL", "stock": true }
+    ],
+    "description": "A stylish corduroy shirt with a soft finish and warm texture.",
+    "productDetails": [
+      { "label": "Material", "value": "Corduroy Cotton" },
+      { "label": "Fit", "value": "Regular Fit" }
+    ]
+  }
+]

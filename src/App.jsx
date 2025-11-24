@@ -3,22 +3,33 @@ import { createBrowserRouter,RouterProvider } from "react-router";
 import HomePage from "./pages/HomePage";
 import Layout from "./components/layout/Layout";
 import DynamicHome from "./pages/DynamicHome";
+import ProductPage from "./components/product/ProductPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
+      // Home Page
       {
         index: true,
         element: <HomePage />,
       },
+      // Dynamic Home Page (Category Landing)
       {
         path: ":gender", 
         element: <DynamicHome />,
       },
-      // { path: "women", element: <WomenPage /> },
-      // { path: "sneakers", element: <SneakersPage /> },
+      // Product Details Page
+      {
+        path: "product/:productId",
+        element: <ProductPage />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
     ],
   },
 ]);

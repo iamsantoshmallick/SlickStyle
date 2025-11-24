@@ -192,7 +192,6 @@ const Header = () => {
               </button>
             </div>
             <TopSection
-              activeCategory={activeGender} // Pass Redux state
               onCategoryChange={handleCategoryChange} // Pass dispatch handler
             />
             {(activeGender) && (
