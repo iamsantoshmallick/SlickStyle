@@ -8,15 +8,17 @@ import TopSection from "../navbar/TopSection";
 import CategoryCarousel from "../navbar/CategoryCarousel";
 import AccordionData from "../../data/products.json";
 import AccordionGrid from "../navbar/AccordionGrid";
-import carouselData from "../../data/nav-carousel.json"
+import carouselData from "../../data/nav-carousel.json";
 import { setGender } from "../../features/shop/shopSlice";
+import CartDrawer from "../cart/CartDrawer";
 
 const Header = () => {
-    const navLinks = [
+  const navLinks = [
     { name: "MEN", path: "/men" },
     { name: "WOMEN", path: "/women" },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const sidebarRef = useRef(null);
 
   const cartItemCount = useSelector((state) =>
@@ -26,7 +28,6 @@ const Header = () => {
   // access the global gender state
   const activeGender = useSelector((state) => state.shop.gender);
   const dispatch = useDispatch();
-  
 
   // Handler to dispatch the change
   const handleCategoryChange = (category) => {
@@ -134,19 +135,20 @@ const Header = () => {
 
           {/* Icons (Shared) */}
           <button className="text-gray-800 md:hidden">
-            {" "}
-            {/* Search only on mobile icon bar */}
             <Search size={20} />
           </button>
           <button className="hidden text-gray-800 md:block">
-            {" "}
-            {/* User only on desktop */}
             <User size={20} />
           </button>
           <button className="text-gray-800">
             <Heart size={20} />
           </button>
-          <button className="relative text-gray-800">
+
+          {/* CART BUTTON */}
+          <button
+            className="relative text-gray-800"
+            onClick={() => setIsCartOpen(true)}
+          >
             <ShoppingBag size={20} />
             {cartItemCount > 0 && (
               <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-xs text-white">
@@ -194,18 +196,20 @@ const Header = () => {
             <TopSection
               onCategoryChange={handleCategoryChange} // Pass dispatch handler
             />
-            {(activeGender) && (
-            <>
-            <CategoryCarousel data={carouselData[activeGender]} />
-            <AccordionGrid
-              key={activeGender} // Force re-render when gender changes
-              data={AccordionData[activeGender]} // Pull data based on Redux state
-            />
-            </>
+            {activeGender && (
+              <>
+                <CategoryCarousel data={carouselData[activeGender]} />
+                <AccordionGrid
+                  key={activeGender} // Force re-render when gender changes
+                  data={AccordionData[activeGender]} // Pull data based on Redux state
+                />
+              </>
             )}
           </div>
         </div>
       )}
+
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </header>
   );
 };

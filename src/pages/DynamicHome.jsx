@@ -5,12 +5,12 @@ import { setGender } from "../features/shop/shopSlice";
 
 // Data & Components
 import homeData from "../data/homeData.json";
+import productData from "../data/productData.json";
 import TopIconNav from "../components/home/TopIconNav";
 import HeroCarousel from "../components/home/HeroCarousel";
 import SectionCarousel from "../components/home/SectionCarousel";
 import ErrorPage from "./ErrorPage";
 
-// Allowed categories
 const validCategories = ["men", "women"];
 
 const quotesByGender = {
@@ -19,24 +19,22 @@ const quotesByGender = {
     "Dress like you’re already there.",
     "Good fits. Good energy.",
     "Oversized tee, oversized confidence.",
-    "Style is a silent introduction.",
+    "Style is a silent introduction."
   ],
   women: [
     "Your outfit is your mood in pixels.",
     "Bold fits. Soft heart.",
     "Style that speaks before you do.",
     "Comfort first, slay always.",
-    "You’re the main character today.",
-  ],
+    "You’re the main character today."
+  ]
 };
 
-// Helper to pick a quote based on gender
 const getRandomQuote = (gender) => {
   const menQuotes = quotesByGender.men;
   const womenQuotes = quotesByGender.women;
 
   let pool = [...menQuotes, ...womenQuotes];
-
   if (gender && quotesByGender[gender]) {
     pool = quotesByGender[gender];
   }
@@ -45,14 +43,35 @@ const getRandomQuote = (gender) => {
   return pool[index];
 };
 
+// Build a product lookup map once (outside component)
+const productMap = productData.reduce((acc, product) => {
+  acc[product.id] = product;
+  return acc;
+}, {});
+
+// Helper to turn section.productIds into SectionCarousel items
+const buildCarouselItems = (section) => {
+  if (section.type !== "productCarousel" || !Array.isArray(section.productIds)) {
+    return [];
+  }
+
+  return section.productIds
+    .map((id) => productMap[id])
+    .filter(Boolean)
+    .map((p) => ({
+      id: p.id,
+      img: p.images?.[0],
+      brand: p.brand,
+      discount: p.discount,
+      path: `/product/${p.id}`
+    }));
+};
+
 const DynamicHome = () => {
   const { gender } = useParams();
   const dispatch = useDispatch();
 
-  // Hooks must always be at the top, before any returns
   const [isLoading, setIsLoading] = useState(true);
-
-  // Pick a quote once, when the component mounts / gender first resolves
   const [quote] = useState(() => getRandomQuote(gender));
 
   useEffect(() => {
@@ -60,7 +79,6 @@ const DynamicHome = () => {
       dispatch(setGender(gender));
     }
 
-    // Only async state update -> no cascading render warning
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 800);
@@ -68,29 +86,26 @@ const DynamicHome = () => {
     return () => clearTimeout(timer);
   }, [gender, dispatch]);
 
-  // Validate URL & data
   const isValidCategory = validCategories.includes(gender);
   const pageData = isValidCategory ? homeData[gender] : null;
 
   if (!isValidCategory || !pageData) {
-    // /xyz or missing data -> 404
     return <ErrorPage />;
   }
 
-  // While loading -> shimmer skeleton + quote
   if (isLoading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white px-4">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white px-1">
         {/* Hero skeleton */}
-        <div className="w-full max-w-5xl mb-3">
-          <div className="skeleton h-44 md:h-72 rounded-2xl"></div>
+        <div className="w-full max-w-5xl">
+          <div className="skeleton h-44 md:h-66 rounded-2xl"></div>
         </div>
-       {/* Quote */}
-        <p className="text-center text-gray-500 text-sm md:text-base max-w-sm italic">
+              {/* Quote */}
+        <p className="text-center my-6 text-gray-500 text-sm md:text-base max-w-sm italic">
           {quote}
         </p>
         {/* Carousel item skeletons */}
-        <div className="w-full max-w-5xl flex gap-4 justify-center mt-4">
+        <div className="w-full max-w-5xl flex gap-4 justify-center">
           {[1, 2, 3, 4].map((i) => (
             <div
               key={i}
@@ -102,28 +117,28 @@ const DynamicHome = () => {
     );
   }
 
-  // Loaded -> fade in real content
   return (
     <div className="min-h-screen bg-white animate-fadeIn">
       <TopIconNav data={pageData.topNav} />
-
       <HeroCarousel slides={pageData.heroSlides} />
 
       <div className="mt-8 space-y-4">
         {pageData.sections?.map((section) => {
-          switch (section.type) {
-            case "carousel":
-              return (
-                <SectionCarousel
-                  key={section.id}
-                  title={section.title}
-                  items={section.items}
-                  aspectRatio={section.aspectRatio}
-                />
-              );
-            default:
-              return null;
+          if (section.type === "productCarousel") {
+            const items = buildCarouselItems(section);
+            if (!items.length) return null;
+
+            return (
+              <SectionCarousel
+                key={section.id}
+                title={section.title}
+                items={items}
+                aspectRatio={section.aspectRatio}
+              />
+            );
           }
+
+          return null;
         })}
       </div>
     </div>
