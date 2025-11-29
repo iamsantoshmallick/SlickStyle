@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* App.css */
+body.menu-open,
+body.cart-open {
+  overflow: hidden;
+}
+
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;

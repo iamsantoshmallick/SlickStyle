@@ -8,6 +8,7 @@ import { addToCart } from "../../features/cart/cartSlice.js";
 import ProductGallery from "./ProductGallery";
 import ProductInfo from "./ProductInfo";
 import SectionCarousel from "../home/SectionCarousel";
+import Breadcrumbs from "../shared/Breadcrumbs";
 
 // Data
 import productData from "../../data/productData.json";
@@ -49,7 +50,7 @@ const ProductPage = () => {
         brand: product.brand,
         price: product.price,
         img: product.images[0],
-        size: selectedSize
+        size: selectedSize,
       })
     );
   };
@@ -63,13 +64,49 @@ const ProductPage = () => {
       img: p.images?.[0],
       brand: p.brand,
       discount: p.discount,
-      path: `/product/${p.id}`
+      path: `/product/${p.id}`,
     }));
+  // Helper to normalize text for URLs
+  // Converts text into a clean URL-friendly slug.
+  // Examples:
+  //   "T-Shirts" → "t-shirts"
+  //   "  Winter Wear  " → "winter-wear"
+  //   "Soft   Touch Tee" → "soft-touch-tee"
+  const normalize = (str) => str?.trim().toLowerCase().replace(/\s+/g, "-");
+
+  // Extract gender from product breadcrumbs ("Men" → "men")
+  // Used to build gender-aware URLs for category paths.
+  const productGender = normalize(product.breadcrumbs?.[1]);
+
+  // Build structured breadcrumb objects for <Breadcrumbs />
+  const breadcrumbData = product.breadcrumbs
+    ?.filter((crumb) => crumb.toLowerCase() !== "home") // Skip "Home" since UI already shows a Home icon
+    .map((crumb, index) => {
+      const label = crumb;
+      const slug = normalize(label); // Convert "T-Shirts" → "t-shirts"
+
+      let path;
+
+      // Case 1: Gender breadcrumb (Men / Women)
+      // These map directly to base routes: /men or /women
+      if (slug === "men" || slug === "women") {
+        path = `/${slug}`;
+      }
+
+      // Case 2: Category breadcrumbs (e.g., Topwear, T-Shirts)
+      // All items after gender receive a gender-prefixed route:
+      // /men/t-shirts or /women/dresses
+      else if (index > 0) {
+        path = `/${productGender}/${slug}`;
+      }
+
+      return { label, path };
+    });
 
   return (
     <div className="min-h-screen bg-white pb-24 md:pb-10">
       {/* Breadcrumbs */}
-      <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 py-4 px-4 lg:px-8">
+      {/* <div className="hidden md:flex items-center gap-2 text-xs text-gray-500 py-4 px-4 lg:px-8">
         {product.breadcrumbs &&
           product.breadcrumbs.map((crumb, i) => (
             <span key={i} className="flex items-center gap-2">
@@ -77,8 +114,10 @@ const ProductPage = () => {
               {i < product.breadcrumbs.length - 1 && <ChevronRight size={12} />}
             </span>
           ))}
+      </div> */}
+      <div className="px-4 lg:px-8 max-w-7xl mx-auto">
+        <Breadcrumbs customCrumbs={breadcrumbData} />
       </div>
-
       {/* Layout */}
       <div className="flex flex-col md:flex-row md:gap-8 lg:gap-12 max-w-7xl mx-auto md:px-4 lg:px-8">
         <ProductGallery images={product.images} />
