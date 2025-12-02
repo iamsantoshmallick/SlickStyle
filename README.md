@@ -175,5 +175,3 @@ This project belongs to **THE SLICK STYLE** brand. All assets, design, and code 
 ## ❤️ Credits
 
 Developed by Santosh Mallick.
-
-If you need additional docs (API schema, component docs, architecture diagram), I can add them too.
