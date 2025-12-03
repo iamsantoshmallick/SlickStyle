@@ -1,3 +1,5 @@
+//src/components/home/HeroCarousel.jsx
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 
@@ -33,7 +35,7 @@ const HeroCarousel = ({ slides }) => {
                <img 
                  src={slide.image} 
                  alt={slide.alt} 
-                 className="w-full object-cover object-top aspect-21/9 md:aspect-21/7" 
+                 className="w-full object-cover object-center aspect-21/9 md:aspect-21/7" 
                />
             </div>
           </SwiperSlide>

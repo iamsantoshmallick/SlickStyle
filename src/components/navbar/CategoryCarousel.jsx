@@ -1,3 +1,5 @@
+//src/components/navbar/CategoryCarousel.jsx
+
 import { NavLink } from "react-router";
 import { useHorizontalScroll } from "../../hooks/useHorizontalScroll.js";
 

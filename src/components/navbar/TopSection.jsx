@@ -1,3 +1,5 @@
+//src/components/navbar/TopSection.jsx
+
 import { NavLink } from "react-router";
 
 const TopSection = ({ onCategoryChange }) => {

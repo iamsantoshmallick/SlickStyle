@@ -1,3 +1,5 @@
+//src/components/product/ProductPage.jsx
+
 import { useState } from "react";
 import { useParams, Link } from "react-router";
 import { useDispatch } from "react-redux";

@@ -1,3 +1,5 @@
+//src/features/cart/cartSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
 // Helper to calculate totals to ensure consistency

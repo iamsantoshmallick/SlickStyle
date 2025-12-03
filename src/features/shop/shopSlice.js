@@ -1,3 +1,5 @@
+//src/features/shop/shopSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

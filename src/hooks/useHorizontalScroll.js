@@ -1,3 +1,5 @@
+//src/hooks/useHorizontalScroll.js
+
 import { useEffect, useRef } from "react";
 
 /**

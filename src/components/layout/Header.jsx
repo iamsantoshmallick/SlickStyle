@@ -42,6 +42,16 @@ const Header = () => {
     dispatch(setGender(category));
   };
 
+  const openMenu = () => {
+    setIsCartOpen(false);
+    setIsMenuOpen(true);
+  };
+
+  const openCart = () => {
+    setIsMenuOpen(false);
+    setIsCartOpen(true);
+  };
+
   /**
    * Lock body scroll when sidebar menu is open
    * Prevents background scrolling on mobile & desktop
@@ -75,7 +85,6 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-      
       {/* -------------------------------------------------- */}
       {/* 1. MOBILE TOP BANNER                              */}
       {/* -------------------------------------------------- */}
@@ -92,10 +101,9 @@ const Header = () => {
       {/* 2. MAIN HEADER BAR                                */}
       {/* -------------------------------------------------- */}
       <nav className="flex items-center justify-between px-4 py-4 md:px-6 lg:px-8">
-        
         {/* LEFT: Hamburger + Desktop Logo */}
         <div className="flex items-center gap-4">
-          <button onClick={() => setIsMenuOpen(true)} className="text-gray-800">
+          <button onClick={openMenu} className="text-gray-800">
             <Menu size={24} />
           </button>
           <NavLink to="/" className="hidden md:block">
@@ -157,10 +165,7 @@ const Header = () => {
           </button>
 
           {/* Cart button with badge */}
-          <button
-            className="relative text-gray-800"
-            onClick={() => setIsCartOpen(true)}
-          >
+          <button className="relative text-gray-800" onClick={openCart}>
             <ShoppingBag size={20} />
             {cartItemCount > 0 && (
               <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-xs text-white">
@@ -181,7 +186,9 @@ const Header = () => {
             to={link.path}
             className={({ isActive }) =>
               `w-full py-2.5 text-center text-sm font-bold uppercase ${
-                isActive ? "border-b-2 border-red-600 text-black" : "text-gray-500"
+                isActive
+                  ? "border-b-2 border-red-600 text-black"
+                  : "text-gray-500"
               }`
             }
           >
@@ -197,7 +204,7 @@ const Header = () => {
         <div className="fixed left-0 top-0 h-screen w-full bg-black/50 z-50">
           <div
             ref={sidebarRef}
-            className="h-full w-5/6 bg-white overflow-y-auto custom-scrollbar"
+            className="h-full w-5/6 md:w-6/13 bg-white overflow-y-auto custom-scrollbar"
           >
             <div className="flex justify-end">
               <button

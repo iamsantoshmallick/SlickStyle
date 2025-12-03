@@ -1,3 +1,5 @@
+//src/components/product/ProductInfo.jsx
+
 import { Heart, ShoppingBag, Star } from "lucide-react";
 import SizeSelector from "./SizeSelector";
 
@@ -61,7 +63,7 @@ const ProductInfo = ({
         <p>{product.description}</p>
 
         <div className="grid grid-cols-2 gap-y-2 mt-4">
-          {product.productDetails.map((detail, idx) => (
+          {product.productDetails?.map((detail, idx) => (
             <div key={idx}>
               <span className="font-semibold text-gray-900">
                 {detail.label}:{" "}

@@ -1,6 +1,7 @@
+//src/components/home/SectionCarousel.jsx
+
 import { useState } from 'react';
 import { Link } from 'react-router';
-// Import the hook we just created above
 import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
 
 // --- Helper Component for Individual Items ---
@@ -125,7 +126,6 @@ const SectionCarousel = ({ title, items, aspectRatio }) => {
           style={{ scrollBehavior: isDown ? 'auto' : 'smooth' }}
         >
           {items.map((item) => (
-            // Pass the aspect ratio down to individual items
             <CarouselItem key={item.id} item={item} aspectRatio={aspectRatio} />
           ))}
         </div>

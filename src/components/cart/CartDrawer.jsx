@@ -57,7 +57,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-60 flex justify-end bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
+    <div className="fixed inset-0 z-60 flex justify-end bg-black/50 backdrop-blur-sm">
       <div
         ref={drawerRef}
         className="w-full max-w-md h-full bg-white shadow-2xl flex flex-col animate-in slide-in-from-right duration-300"

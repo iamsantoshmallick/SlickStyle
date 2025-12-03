@@ -1,3 +1,5 @@
+//src/components/home/TopIconNav.jsx
+
 import { NavLink } from "react-router";
 import { useEffect, useRef, useState } from "react";
 
@@ -23,6 +25,7 @@ const NavItem = ({ item }) => {
       >
         {!isLoaded && (
           <div className="absolute inset-0 bg-gray-200 animate-pulse z-10" />
+          //Needs To Be Improved
         )}
 
         <img
@@ -42,7 +45,7 @@ const NavItem = ({ item }) => {
 
       {/* Label */}
       <span
-        className="font-bold text-gray-700 group-hover:text-red-600 whitespace-nowrap transition-colors duration-200"
+        className="font-bold text-gray-700 group-hover:text-red-600 whitespace-nowrap transition-colors duration-200 py-1"
         style={{
           fontSize: "calc(0.875rem - (var(--scroll-progress) * 0.125rem))",
           lineHeight: "1",
@@ -118,7 +121,7 @@ const TopIconNav = ({ data }) => {
       }}
     >
       <div
-        className="container mx-auto ps-2 md:px-4"
+        className="container mx-auto"
         style={{
           paddingTop: "calc(1rem - (var(--scroll-progress) * 0.5rem))",
           paddingBottom: "calc(1rem - (var(--scroll-progress) * 0.5rem))",

@@ -1,3 +1,5 @@
+// src/pages/DynamicHome.jsx
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
@@ -81,7 +83,7 @@ const DynamicHome = () => {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 800);
+    }, 700);
 
     return () => clearTimeout(timer);
   }, [gender, dispatch]);
@@ -95,7 +97,7 @@ const DynamicHome = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white px-1">
+      <div className="md:min-h-screen flex flex-col items-center justify-center bg-white px-1 py-3">
         {/* Hero skeleton */}
         <div className="w-full max-w-5xl">
           <div className="skeleton h-44 md:h-66 rounded-2xl"></div>
@@ -118,7 +120,7 @@ const DynamicHome = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white animate-fadeIn">
+    <div className="min-h-screen bg-white fade-in">
       <TopIconNav data={pageData.topNav} />
       <HeroCarousel slides={pageData.heroSlides} />
 

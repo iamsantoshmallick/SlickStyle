@@ -1,3 +1,5 @@
+//src/components/product/ProductGallery.jsx
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";

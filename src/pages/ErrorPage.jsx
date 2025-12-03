@@ -1,3 +1,5 @@
+// src/pages/ErrorPage.jsx
+
 import { Link, useLocation } from "react-router";
 
 const ErrorPage = () => {

@@ -1,3 +1,5 @@
+//src/components/product/SizeSelector.jsx
+
 const SizeSelector = ({ sizes, selectedSize, onSelectSize }) => {
   return (
     <div className="mb-6">

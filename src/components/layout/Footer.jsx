@@ -1,3 +1,5 @@
+//src/components/layout/Footer.jsx
+
 const Footer = () => {
   return (
     <div>Footer</div>

@@ -1,3 +1,5 @@
+//src/components/navbar/ImageWithFallback.jsx
+
 import { useState } from "react";
 
 const ImageWithFallback = ({ src, alt, className }) => {
@@ -21,4 +23,4 @@ const ImageWithFallback = ({ src, alt, className }) => {
   );
 };
 
-export default ImageWithFallback
+export default ImageWithFallback;

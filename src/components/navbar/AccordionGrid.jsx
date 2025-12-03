@@ -1,30 +1,35 @@
-import { useState } from 'react';
-import { Link } from 'react-router';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import ImageWithFallback from './ImageWithFallback';
+//src/components/navbar/AccordionGrid.jsx
 
+import { useState } from "react";
+import { Link } from "react-router";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import ImageWithFallback from "./ImageWithFallback";
 
 // --- Sub-Accordion Component (Handles the subsections like 'Shop By Fit') ---
 const SubAccordionItem = ({ subSection }) => {
   // Use a sensible default state for inner accordions
   const [isOpen, setIsOpen] = useState(false);
-
+  
+  if (!subSection || !Array.isArray(subSection.items) || subSection.items.length === 0) {
+    return null;
+  }
   // Only create a clickable accordion if the subheading is meaningful (i.e., not 'Categories').
   // Otherwise, just render the grid content directly below the parent.
-  const showSubheadingAsAccordion = subSection.heading && subSection.heading !== 'Categories';
+  const showSubheadingAsAccordion =
+    subSection.heading && subSection.heading !== "Categories";
 
   const GridContent = (
     <div className="grid grid-cols-3 gap-x-1 gap-y-6 md:grid-cols-4">
       {subSection.items.map((item) => (
-        <Link 
-          to={item.path} 
-          key={item.id} 
-          className="group"
-        >
-        <div className='flex flex-wrap items-center justify-center text-center'>
-          <div className=" mb-2 h-24 w-24 overflow-hidden rounded-md bg-gray-100">
-            <ImageWithFallback src={item.img} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"/>
-          </div>
+        <Link to={item.path} key={item.id} className="group">
+          <div className="flex flex-wrap items-center justify-center text-center">
+            <div className=" mb-2 h-24 w-24 overflow-hidden rounded-md bg-gray-100">
+              <ImageWithFallback
+                src={item.img}
+                alt={item.name}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
           </div>
           <p className="flex-1 flex justify-center text-xs font-medium text-gray-800 group-hover:text-red-600 px-1">
             {item.name}
@@ -33,7 +38,6 @@ const SubAccordionItem = ({ subSection }) => {
       ))}
     </div>
   );
-
 
   if (!showSubheadingAsAccordion) {
     // Render the content grid directly (e.g., for the main 'Categories' list in 'Shop All')
@@ -63,21 +67,17 @@ const SubAccordionItem = ({ subSection }) => {
       </button>
 
       {/* Nested Accordion Body */}
-      {isOpen && (
-        <div className="pb-3">
-          {GridContent}
-        </div>
-      )}
+      {isOpen && <div className="pb-3">{GridContent}</div>}
     </div>
   );
 };
-
 
 // --- Main Accordion Component (Wrapper) ---
 const AccordionGrid = ({ data }) => {
   if (!data) return null;
 
-  const sections = Object.values(data);
+  const sections = Object.values(data || {});
+  if (!sections.length) return null;
 
   return (
     <div className="flex flex-col gap-2 pb-20 px-5">
@@ -91,8 +91,8 @@ const AccordionGrid = ({ data }) => {
 // --- Main Accordion Item Component (Handles Shop All, Top Wear, Bottomwear) ---
 const AccordionItem = ({ section }) => {
   // Initialize state based on prop value (Shop All open by default)
-  const [isOpen, setIsOpen] = useState(section.heading === 'Shop All');
-  
+  const [isOpen, setIsOpen] = useState(section.heading === "Shop All");
+
   return (
     <div className="border-b border-gray-100 py-1 last:border-0">
       {/* 1. Main Accordion Header */}
@@ -100,9 +100,7 @@ const AccordionItem = ({ section }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between py-3 text-left"
       >
-        <h2 className="text-lg font-bold text-gray-900">
-          {section.heading}
-        </h2>
+        <h2 className="text-lg font-bold text-gray-900">{section.heading}</h2>
         {isOpen ? (
           <ChevronUp size={20} className="text-gray-500" />
         ) : (
@@ -115,10 +113,7 @@ const AccordionItem = ({ section }) => {
         <div className="mt-2 space-y-2">
           {section.subSections.map((subSection) => (
             // Use the new SubAccordionItem for nested structure
-            <SubAccordionItem 
-              key={subSection.id} 
-              subSection={subSection} 
-            />
+            <SubAccordionItem key={subSection.id} subSection={subSection} />
           ))}
         </div>
       )}

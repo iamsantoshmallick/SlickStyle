@@ -1,4 +1,5 @@
 // src/pages/CategoryPage.jsx
+
 import { useEffect, useMemo } from "react"; // Changed import
 import { useParams, Link } from "react-router";
 import { useDispatch } from "react-redux";
